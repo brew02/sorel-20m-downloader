@@ -10,7 +10,8 @@ s3 = boto3.client("s3", config=Config(signature_version=UNSIGNED))
 # Make the bin directory if it doesn't exist
 os.makedirs("bin", exist_ok=True)
 
-prefix = "09-DEC-2020/binaries/" # Prefix for keys that represent binaries
+# Prefix for keys that represent binaries
+prefix = "09-DEC-2020/binaries/" 
 prefix_len = len(prefix)
 
 # Use the prefix in the URL parameters. This way
@@ -20,8 +21,11 @@ params = {"prefix": prefix}
 num_down = 0
 bytes_down = 0
 total_bin_size = 0
-limit = 30000000 # Set binary download limit to 30MB
-namespace = {"namespace": "http://s3.amazonaws.com/doc/2006-03-01/"} # xmlns namespace
+# Set binary download limit to 30MB
+limit = 30000000 
+
+# xmlns namespace
+namespace = {"namespace": "http://s3.amazonaws.com/doc/2006-03-01/"}
 
 while True:
     # Download the XML file from AWS (you can view this XML file by
