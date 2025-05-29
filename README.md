@@ -1,6 +1,6 @@
 # SOREL-20M Binary Downloader
 
-This Python script downloads the PE files from the SOREL-20M dataset using the given limit in bytes.
+This Python script downloads the PE files binaries the SOREL-20M dataset with a byte limit in the script.
 
 ## Prerequisites
 
