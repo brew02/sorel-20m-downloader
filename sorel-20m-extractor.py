@@ -11,7 +11,7 @@ for filename in os.listdir(current_path):
         continue
 
     # Only extract unextracted binaries
-    if os.path.exists(filename + file_suffix):
+    if os.path.exists(filepath + file_suffix):
         continue
 
     if os.path.isfile(filepath):
