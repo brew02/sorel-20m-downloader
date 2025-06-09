@@ -15,15 +15,12 @@ for filename in os.listdir(current_path):
         continue
 
     if os.path.isfile(filepath):
-        try:
-            with open(filepath, "br+") as file:
-                content = file.read()
-                decompressed = zlib.decompress(content)
-                file.seek(0)
-                file.write(decompressed)
-                file.truncate()
-                print(f"Extracted {filename}")
-            
-            os.rename(filepath, filepath + file_suffix)
-        except Exception as e:
-            print(f"Error reading {filename}: {e}")
+        with open(filepath, "br+") as file:
+            content = file.read()
+            decompressed = zlib.decompress(content)
+            file.seek(0)
+            file.write(decompressed)
+            file.truncate()
+            print(f"Extracted {filename}")
+        
+        os.rename(filepath, filepath + file_suffix)
