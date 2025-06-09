@@ -5,8 +5,13 @@ current_path = os.getcwd() + "\\bin"
 for filename in os.listdir(current_path):
     filepath = os.path.join(current_path, filename)
 
+    # Only extract compressed binaries
     file_suffix = "_extracted"
-    if(filename.endswith(file_suffix)):
+    if filename.endswith(file_suffix):
+        continue
+
+    # Only extract unextracted binaries
+    if os.path.exists(filename + file_suffix):
         continue
 
     if os.path.isfile(filepath):
